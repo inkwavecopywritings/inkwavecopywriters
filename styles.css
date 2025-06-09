@@ -1,0 +1,632 @@
+/* Reset & base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #fefefe;
+  color: #222;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+  color: #0077cc;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #005fa3;
+}
+
+/* Preloader */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #0077cc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+#preloader::after {
+  content: "";
+  width: 50px;
+  height: 50px;
+  border: 5px solid #fff;
+  border-top: 5px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Header */
+header {
+  background: #004a99;
+  color: white;
+  padding: 1.2rem 2rem;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 0.2rem;
+}
+
+.slogan {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+  opacity: 0.85;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  position: relative;
+}
+
+.nav-link {
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.4rem 0.7rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  background: #0066ff;
+  color: #fff;
+}
+
+#menu-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Main content */
+main {
+  flex-grow: 1;
+  max-width: 960px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, #0077cc, #004a99);
+  color: white;
+  text-align: center;
+  padding: 4rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 68, 153, 0.3);
+  margin-bottom: 3rem;
+}
+
+.hero h2 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  font-weight: 400;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-primary {
+  background: #fff;
+  color: #0077cc;
+  padding: 0.75rem 2rem;
+  font-weight: 700;
+  border-radius: 50px;
+  box-shadow: 0 6px 10px rgba(0, 119, 204, 0.4);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: inline-block;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background: #005fa3;
+  color: #fff;
+  outline: none;
+  box-shadow: 0 8px 14px rgba(0, 95, 163, 0.6);
+  cursor: pointer;
+}
+
+/* Testimonials Section */
+.testimonials {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  position: relative;
+  min-height: 180px;
+}
+
+.testimonials h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+padding-top: 100px;
+  font-weight: 700;
+  color: #004a99;
+}
+
+.testimonial {
+  display: none;
+  font-style: italic;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: #333;
+  transition: opacity 1s ease;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+.testimonial.active {
+  display: block;
+}
+
+.testimonial blockquote {
+  margin-bottom: 0.5rem;
+}
+
+.testimonial cite {
+  font-weight: 600;
+  color: #0077cc;
+}
+
+/* Newsletter Section */
+.newsletter {
+  padding: 40px 20px;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+.newsletter h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.newsletter p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.newsletter form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.newsletter input[type="email"] {
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.newsletter button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 24px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.newsletter button:hover {
+  background-color: #0056b3;
+}
+
+
+.form-feedback {
+  margin-top: 0.5em;
+  font-size: 0.9em;
+}
+
+
+/* Sections for other pages */
+.services-intro,
+.services-list,
+.about-us,
+.mission,
+.values,
+.contact-form {
+  margin-bottom: 3rem;
+}
+
+.services-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.service-item {
+  background: #e6f0ff;
+  padding: 1.8rem 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 119, 204, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.service-item:hover {
+  transform: translateY(-6px);
+}
+
+.service-item h3 {
+  color: #004a99;
+  margin-bottom: 0.8rem;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+/* About page styles */
+.about-us p,
+.mission p,
+.values ul {
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  color: #333;
+}
+
+.values ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.values ul li {
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+}
+
+.values ul li strong {
+  color: #004a99;
+}
+
+/* Contact form */
+.contact-form form {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form label {
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: #004a99;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1.5px solid #ccc;
+  margin-bottom: 1.2rem;
+  resize: vertical;
+  transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #0077cc;
+  box-shadow: 0 0 8px rgba(0, 119, 204, 0.3);
+}
+
+.contact-form button.btn-primary {
+  align-self: center;
+  width: 100%;
+  max-width: 180px;
+}
+
+
+/* Contact Form Styles */
+.contact {
+  max-width: 600px;
+  margin: 60px auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Roboto', sans-serif;
+}
+
+.contact h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.contact p {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #555;
+}
+
+
+form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 700;
+  color: #333;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.4);
+  outline: none;
+}
+
+form button[type="submit"] {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+form button[type="submit"]:hover {
+  background-color: #2980b9;
+}
+
+#formFeedback {
+  margin-top: 10px;
+  font-size: 0.95rem;
+}
+
+
+#formFeedback {
+  font-weight: 600;
+  margin-top: -0.8rem;
+  margin-bottom: 1rem;
+  min-height: 1.4em;
+  text-align: center;
+}
+.newsletter-signup {
+  background-color: #f9f9f9;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 8px;
+  margin: 2rem auto;
+  max-width: 600px;
+}
+
+.newsletter-signup h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.8rem;
+  color: #333;
+}
+
+.newsletter-signup p {
+  margin-bottom: 1.2rem;
+  font-size: 1rem;
+  color: #666;
+}
+
+.newsletter-signup input[type="email"] {
+  padding: 0.7rem;
+  width: 60%;
+  max-width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 0.5rem;
+}
+
+.newsletter-signup button {
+  padding: 0.7rem 1rem;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.newsletter-signup button:hover {
+  background-color: #0056b3;
+}
+
+
+.newsletter {
+  text-align: center;
+  padding: 3em 1em;
+  background: #f7f7f7;
+  margin-top: 3em;
+}
+
+.newsletter h3 {
+  margin-bottom: 0.5em;
+}
+
+.newsletter input[type="email"] {
+  padding: 0.7em;
+  width: 250px;
+  max-width: 80%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.newsletter button {
+  padding: 0.7em 1em;
+}
+
+.form-feedback {
+  margin-top: 0.5em;
+  font-size: 0.9em;
+}
+
+
+.spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #ccc;
+  border-top: 2px solid #0077cc;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+
+
+
+/* Footer */
+footer {
+  background: #004a99;
+  color: white;
+  text-align: center;
+  padding: 1.3rem 1rem;
+  position: relative;
+}
+
+#scrollToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #0077cc;
+  border: none;
+  color: white;
+  padding: 0.5rem 0.75rem;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+  box-shadow: 0 5px 12px rgba(0, 119, 204, 0.5);
+  transition: background-color 0.3s ease;
+}
+
+#scrollToTop:hover {
+  background: #005fa3;
+}
+
+/* Animations */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease forwards;
+  opacity: 0;
+}
+
+.slide-in {
+  animation: slideIn 1s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .services-list {
+    grid-template-columns: 1fr;
+  }
+
+  nav {
+    justify-content: flex-start;
+    gap: 0;
+  }
+
+  .nav-link {
+    display: none;
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+    border-top: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .nav-link.visible {
+    display: block;
+  }
+
+  #menu-toggle {
+    display: block;
+  }
+
+  header {
+    text-align: left;
+    padding: 1rem 1.5rem;
+  }
+}
+
+
